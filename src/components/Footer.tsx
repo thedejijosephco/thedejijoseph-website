@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const socialLinks = [
@@ -14,29 +15,34 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="section-padding section-spacing border-t border-border">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
-          {/* Left Column */}
-          <div className="space-y-8">
-            <p className="heading-subsection text-muted-foreground uppercase tracking-wide">
-              Say Hi
+    <footer className="section-padding section-spacing border-t border-border relative overflow-hidden">
+      {/* Geometric accent */}
+      <div className="absolute bottom-0 right-0 w-40 h-40 border-4 border-primary/10 translate-x-1/2 translate-y-1/2" />
+      
+      <div className="max-w-7xl mx-auto relative">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-12">
+          {/* Brand Column */}
+          <div className="space-y-6">
+            <Link to="/" className="flex items-center gap-3">
+              <img src={logo} alt="Deji Joseph" className="h-10 w-auto" />
+            </Link>
+            <p className="body-regular text-muted-foreground max-w-xs">
+              Data analyst & strategist turning complex information into actionable insights.
             </p>
-            <h2 className="heading-section">
-              The Deji Joseph
-            </h2>
           </div>
 
-          {/* Right Column */}
-          <div className="space-y-12">
-            {/* Navigation */}
-            <nav className="flex flex-wrap gap-6">
+          {/* Navigation */}
+          <div className="space-y-6">
+            <h4 className="font-display font-bold text-sm uppercase tracking-wider text-muted-foreground">
+              Navigation
+            </h4>
+            <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 link.path ? (
                   <Link 
                     key={link.name}
                     to={link.path} 
-                    className="nav-link"
+                    className="nav-link w-fit"
                   >
                     {link.name}
                   </Link>
@@ -46,26 +52,31 @@ const Footer = () => {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="nav-link"
+                    className="nav-link w-fit"
                   >
                     {link.name}
                   </a>
                 )
               ))}
             </nav>
+          </div>
 
-            {/* Social Links */}
-            <div className="flex flex-wrap gap-6">
+          {/* Social */}
+          <div className="space-y-6">
+            <h4 className="font-display font-bold text-sm uppercase tracking-wider text-muted-foreground">
+              Connect
+            </h4>
+            <div className="flex flex-col gap-4">
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="nav-link flex items-center gap-1"
+                  className="nav-link w-fit inline-flex items-center gap-2"
                 >
                   {link.name}
-                  <span className="text-xs">↗</span>
+                  <span className="text-primary">↗</span>
                 </a>
               ))}
             </div>
@@ -73,10 +84,11 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-20 pt-8 border-t border-border">
+        <div className="mt-20 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            All content copyright © 2024 The Deji Joseph Co.
+            © 2024 The Deji Joseph Co. All rights reserved.
           </p>
+          <div className="accent-bar" />
         </div>
       </div>
     </footer>
