@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import aboutHeadshot from "@/assets/about-headshot.avif";
+import aboutHeadshot from "@/assets/about-headshot-new.jpg";
 import { Mail, ArrowRight } from "lucide-react";
 
 const About = () => {
@@ -40,7 +40,21 @@ const About = () => {
           
           <div className="max-w-7xl mx-auto relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
-              <div className="space-y-8 lg:pr-8">
+              {/* Image on left */}
+              <div className="relative">
+                <div className="aspect-[4/5] overflow-hidden relative group">
+                  <img 
+                    src={aboutHeadshot} 
+                    alt="Deji Joseph"
+                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                  />
+                  {/* Frame accent */}
+                  <div className="absolute top-6 left-6 w-full h-full border-4 border-primary -z-10" />
+                </div>
+              </div>
+              
+              {/* Text on right */}
+              <div className="space-y-8 lg:pl-8">
                 <div className="accent-bar" />
                 <h1 className="heading-hero">
                   Hi <span className="text-primary">there!</span>
@@ -67,18 +81,6 @@ const About = () => {
                     Get in touch
                     <ArrowRight className="w-4 h-4" />
                   </a>
-                </div>
-              </div>
-              
-              <div className="lg:order-last relative">
-                <div className="aspect-[4/5] overflow-hidden relative group">
-                  <img 
-                    src={aboutHeadshot} 
-                    alt="Deji Joseph"
-                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
-                  />
-                  {/* Frame accent */}
-                  <div className="absolute top-6 left-6 w-full h-full border-4 border-primary -z-10" />
                 </div>
               </div>
             </div>

@@ -8,7 +8,7 @@ const Header = () => {
         <Link to="/" className="flex items-center gap-3 group">
           <img src={logo} alt="Deji Joseph" className="h-8 w-auto" />
           <span className="font-display font-bold text-lg tracking-tight group-hover:text-primary transition-colors">
-            Deji Joseph
+            The Deji Joseph
           </span>
         </Link>
         <nav className="flex items-center gap-8">
