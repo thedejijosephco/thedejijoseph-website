@@ -1,4 +1,4 @@
-import aboutHeadshot from "@/assets/about-headshot.avif";
+
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
@@ -13,7 +13,7 @@ const Hero = () => {
       
       <div className="section-padding pt-32 pb-12 md:pt-44 md:pb-20 flex-1 relative z-10">
         <div className="max-w-7xl mx-auto h-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center h-full">
+          <div className="max-w-3xl">
             {/* Text on left */}
             <div className="space-y-8">
               <div className="accent-bar" />
@@ -44,18 +44,6 @@ const Hero = () => {
               </div>
             </div>
             
-            {/* Image on right */}
-            <div className="relative">
-              <div className="aspect-[4/5] overflow-hidden relative group">
-                <img 
-                  src={aboutHeadshot} 
-                  alt="Deji Joseph"
-                  className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
-                />
-                {/* Frame accent */}
-                <div className="absolute top-6 left-6 w-full h-full border-4 border-primary -z-10" />
-              </div>
-            </div>
           </div>
         </div>
       </div>

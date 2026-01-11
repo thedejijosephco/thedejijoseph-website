@@ -122,35 +122,30 @@ const About = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding py-20 md:py-28 bg-secondary text-secondary-foreground relative overflow-hidden">
+        <section className="section-padding section-spacing bg-secondary text-secondary-foreground relative overflow-hidden">
           {/* Geometric accents */}
-          <div className="absolute top-10 right-10 w-20 h-20 border-2 border-primary/30" />
-          <div className="absolute bottom-10 left-10 w-16 h-16 bg-primary/20" />
+          <div className="absolute top-10 left-10 w-20 h-20 border-2 border-primary/30" />
+          <div className="absolute bottom-10 right-10 w-12 h-12 bg-primary/20" />
           
           <div className="max-w-7xl mx-auto relative">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
               <div className="space-y-6">
                 <div className="w-16 h-1 bg-primary" />
-                <h2 className="heading-section uppercase">
-                  Wanna work
+                <h2 className="heading-section">
+                  wanna work
                   <br />
                   <span className="text-primary">with me?</span>
                 </h2>
               </div>
               
-              <div className="flex flex-col items-start md:items-end gap-6">
-                <a 
-                  href="mailto:hello@thedejijoseph.com?subject=Partnership"
-                  className="btn-primary bg-primary text-primary-foreground"
-                >
-                  <Mail className="w-4 h-4" />
-                  Get in touch
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-                <p className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold text-primary/30">
-                  SAY HI
-                </p>
-              </div>
+              <a 
+                href="mailto:hello@thedejijoseph.com?subject=Partnership"
+                className="btn-primary bg-primary text-primary-foreground hover:bg-primary/90"
+              >
+                <Mail className="w-4 h-4" />
+                Get in touch
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </section>
