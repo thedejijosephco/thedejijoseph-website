@@ -24,6 +24,13 @@ const Introduction = () => {
               strategic thinking, I help organizations see beyond the numbers 
               to understand the stories their data is telling.
             </p>
+            <a 
+              href="/about"
+              className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+            >
+              Learn more about me
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
           
           {/* Image on right */}
