@@ -15,6 +15,9 @@ const Header = () => {
           <Link to="/about" className="nav-link">
             About
           </Link>
+          <Link to="/projects" className="nav-link">
+            Projects
+          </Link>
           <a 
             href="https://notes.thedejijoseph.com/" 
             target="_blank"
