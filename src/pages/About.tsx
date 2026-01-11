@@ -1,22 +1,53 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import aboutHeadshot from "@/assets/about-headshot.avif";
-import { Mail } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
 
 const About = () => {
+  const workExperience = [
+    {
+      title: "Research Lead",
+      company: "Cardinal Healthcare Foundation",
+      location: "Lagos, Nigeria",
+      period: "2022 —— Present",
+      description: "Leading research and technical teams at a pioneering non-profit dedicated to improving the health outcomes of underserved communities across Africa"
+    },
+    {
+      title: "Consultant, Business Analysis",
+      company: "Max-Migold Facilities Management",
+      location: "Lagos, Nigeria",
+      period: "2024",
+      description: "Developed organisation-wide advisory on strategies that improves the institution's student enrolment and engagement"
+    },
+    {
+      title: "Product Manager",
+      company: "myStash Inc.",
+      location: "Lagos, NG; Delaware, US",
+      period: "2022 —— 2024",
+      description: "Led product development from the ground up and launch into three new markets: US, UK, CA. Built analytic dashboards and account review/screening tools"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-32 md:pt-40">
         {/* Hero Section */}
-        <section className="section-padding section-spacing">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-              <div className="space-y-6 lg:pr-8">
-                <h1 className="heading-hero">Hi there!</h1>
+        <section className="section-padding section-spacing relative overflow-hidden">
+          {/* Geometric accents */}
+          <div className="absolute top-40 right-10 w-32 h-32 border-4 border-primary/20" />
+          <div className="absolute bottom-20 left-10 w-20 h-20 bg-primary/10" />
+          
+          <div className="max-w-7xl mx-auto relative">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
+              <div className="space-y-8 lg:pr-8">
+                <div className="accent-bar" />
+                <h1 className="heading-hero">
+                  Hi <span className="text-primary">there!</span>
+                </h1>
                 
                 <p className="body-large">
-                  I'm <strong>Deji</strong>, a data analyst with a knack for turning numbers into actionable insights. With a background in management, I thrive on solving complex problems and helping businesses make data-driven decisions.
+                  I'm <span className="font-bold text-primary">Deji</span>, a data analyst with a knack for turning numbers into actionable insights. With a background in management, I thrive on solving complex problems and helping businesses make data-driven decisions.
                 </p>
                 
                 <p className="body-regular text-muted-foreground">
@@ -30,21 +61,24 @@ const About = () => {
                 <div className="pt-4">
                   <a 
                     href="mailto:hello@thedejijoseph.com?subject=Partnership"
-                    className="inline-flex items-center gap-2 px-6 py-3 border border-foreground rounded-full hover:bg-foreground hover:text-background transition-colors"
+                    className="btn-primary"
                   >
                     <Mail className="w-4 h-4" />
-                    GET IN TOUCH
+                    Get in touch
+                    <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
               </div>
               
-              <div className="lg:order-last">
-                <div className="aspect-[4/5] overflow-hidden">
+              <div className="lg:order-last relative">
+                <div className="aspect-[4/5] overflow-hidden relative group">
                   <img 
                     src={aboutHeadshot} 
                     alt="Deji Joseph"
-                    className="w-full h-full object-cover grayscale"
+                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
                   />
+                  {/* Frame accent */}
+                  <div className="absolute top-6 left-6 w-full h-full border-4 border-primary -z-10" />
                 </div>
               </div>
             </div>
@@ -52,73 +86,69 @@ const About = () => {
         </section>
 
         {/* Recent Work & Projects Section */}
-        <section className="section-padding section-spacing border-t border-border">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="heading-section mb-12 md:mb-16">Recent Work & Projects</h2>
+        <section className="section-padding section-spacing bg-muted/30 relative overflow-hidden">
+          {/* Geometric accent */}
+          <div className="absolute top-0 left-0 w-40 h-40 border-4 border-primary/10 -translate-x-1/2 -translate-y-1/2" />
+          
+          <div className="max-w-7xl mx-auto relative">
+            <div className="mb-16 md:mb-20">
+              <div className="accent-bar mb-6" />
+              <h2 className="heading-section">
+                Recent Work <span className="text-primary">&</span> Projects
+              </h2>
+            </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-              {/* Research Lead */}
-              <div className="space-y-4">
-                <div className="space-y-1">
-                  <h3 className="font-display text-xl font-semibold">Research Lead</h3>
-                  <p className="text-sm text-muted-foreground">Cardinal Healthcare Foundation</p>
-                  <p className="text-sm text-muted-foreground">Lagos, Nigeria</p>
-                  <p className="text-sm text-muted-foreground">2022 —— Present</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+              {workExperience.map((job, index) => (
+                <div key={index} className="space-y-5 card-hover group">
+                  <div className="w-8 h-1 bg-primary group-hover:w-12 transition-all duration-300" />
+                  <div className="space-y-2">
+                    <h3 className="font-display text-xl font-bold group-hover:text-primary transition-colors">
+                      {job.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground font-medium">{job.company}</p>
+                    <p className="text-sm text-muted-foreground">{job.location}</p>
+                    <p className="text-sm text-primary font-medium">{job.period}</p>
+                  </div>
+                  <p className="body-regular text-muted-foreground">
+                    {job.description}
+                  </p>
                 </div>
-                <p className="body-regular text-muted-foreground">
-                  Leading research and technical teams at a pioneering non-profit dedicated to improving the health outcomes of underserved communities across Africa
-                </p>
-              </div>
-
-              {/* Consultant */}
-              <div className="space-y-4">
-                <div className="space-y-1">
-                  <h3 className="font-display text-xl font-semibold">Consultant, Business Analysis</h3>
-                  <p className="text-sm text-muted-foreground">Max-Migold Facilities Management</p>
-                  <p className="text-sm text-muted-foreground">Lagos, Nigeria</p>
-                  <p className="text-sm text-muted-foreground">2024</p>
-                </div>
-                <p className="body-regular text-muted-foreground">
-                  Developed organisation-wide advisory on strategies that improves the institution's student enrolment and engagement
-                </p>
-              </div>
-
-              {/* Product Manager */}
-              <div className="space-y-4">
-                <div className="space-y-1">
-                  <h3 className="font-display text-xl font-semibold">Product Manager</h3>
-                  <p className="text-sm text-muted-foreground">myStash Inc.</p>
-                  <p className="text-sm text-muted-foreground">Lagos, NG; Delaware, US</p>
-                  <p className="text-sm text-muted-foreground">2022 —— 2024</p>
-                </div>
-                <p className="body-regular text-muted-foreground">
-                  Led product development from the ground up and launch into three new markets: US, UK, CA. Built analytic dashboards and account review/screening tools
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding py-16 md:py-24 bg-muted/50">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+        <section className="section-padding py-20 md:py-28 bg-secondary text-secondary-foreground relative overflow-hidden">
+          {/* Geometric accents */}
+          <div className="absolute top-10 right-10 w-20 h-20 border-2 border-primary/30" />
+          <div className="absolute bottom-10 left-10 w-16 h-16 bg-primary/20" />
+          
+          <div className="max-w-7xl mx-auto relative">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
               <div className="space-y-6">
-                <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight uppercase">
-                  Wanna work with me?
+                <div className="w-16 h-1 bg-primary" />
+                <h2 className="heading-section uppercase">
+                  Wanna work
+                  <br />
+                  <span className="text-primary">with me?</span>
                 </h2>
-                <div className="w-full h-px bg-border"></div>
+              </div>
+              
+              <div className="flex flex-col items-start md:items-end gap-6">
                 <a 
                   href="mailto:hello@thedejijoseph.com?subject=Partnership"
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-foreground rounded-full hover:bg-foreground hover:text-background transition-colors"
+                  className="btn-primary bg-primary text-primary-foreground"
                 >
                   <Mail className="w-4 h-4" />
-                  GET IN TOUCH
+                  Get in touch
+                  <ArrowRight className="w-4 h-4" />
                 </a>
+                <p className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold text-primary/30">
+                  SAY HI
+                </p>
               </div>
-              <p className="font-display text-4xl md:text-5xl lg:text-6xl font-medium">
-                SAY HI
-              </p>
             </div>
           </div>
         </section>
