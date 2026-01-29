@@ -24,9 +24,7 @@ const Hero = () => {
               </p>
               
               <h1 className="heading-hero">
-                Making AI
-                <br />
-                <span className="text-primary">Work</span>
+                Making AI <span className="text-primary">Work</span>
                 <br />
                 For You
               </h1>
