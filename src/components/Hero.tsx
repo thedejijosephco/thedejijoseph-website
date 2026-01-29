@@ -17,16 +17,29 @@ const Hero = () => {
             {/* Text on left */}
             <div className="space-y-8">
               <div className="accent-bar" />
-              <h1 className="heading-hero">
-                Looking
-                <br />
-                <span className="text-primary">Beyond</span>
-                <br />
-                What You See
-              </h1>
-              <p className="body-large text-muted-foreground max-w-xl">
-                Data analyst & strategist turning complex information into actionable insights that drive business decisions.
+              
+              {/* Subtle tagline labels */}
+              <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground">
+                Analyst • Engineer • Strategist
               </p>
+              
+              <h1 className="heading-hero">
+                Making AI
+                <br />
+                <span className="text-primary">Work</span>
+                <br />
+                For You
+              </h1>
+              
+              {/* Subtitle */}
+              <p className="text-xl md:text-2xl font-semibold text-foreground font-display tracking-tight">
+                LLMOps Engineer
+              </p>
+              
+              <p className="body-large text-muted-foreground max-w-xl">
+                I want to work with founders, innovators and decision-makers to transform data into insights and products that create outsized value.
+              </p>
+              
               <div className="flex flex-wrap gap-4">
                 <a 
                   href="mailto:hello@thedejijoseph.com?subject=Partnership"
