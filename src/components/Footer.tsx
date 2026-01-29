@@ -17,10 +17,17 @@ const Footer = () => {
 
   return (
     <footer className="section-padding section-spacing border-t border-border relative overflow-hidden">
+      {/* Large typographic background element */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+        <span className="text-[20rem] md:text-[28rem] lg:text-[36rem] font-display font-extrabold text-foreground/[0.03] leading-none tracking-tighter">
+          DEJI
+        </span>
+      </div>
+      
       {/* Geometric accent */}
       <div className="absolute bottom-0 right-0 w-40 h-40 border-4 border-primary/10 translate-x-1/2 translate-y-1/2" />
       
-      <div className="max-w-7xl mx-auto relative">
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-12">
           {/* Brand Column */}
           <div className="space-y-6">

@@ -10,22 +10,30 @@ const About = () => {
       company: "Cardinal Healthcare Foundation",
       location: "Lagos, Nigeria",
       period: "2022 —— Present",
-      description: "Leading research and technical teams at a pioneering non-profit dedicated to improving the health outcomes of underserved communities across Africa"
+      description: "Leading research and technical teams, building data pipelines and infrastructure to analyze health outcomes across underserved communities in Africa"
     },
     {
       title: "Consultant, Business Analysis",
       company: "Max-Migold Facilities Management",
       location: "Lagos, Nigeria",
       period: "2024",
-      description: "Developed organisation-wide advisory on strategies that improves the institution's student enrolment and engagement"
+      description: "Developed data-driven strategies and automated reporting systems to improve institutional decision-making and engagement metrics"
     },
     {
       title: "Product Manager",
       company: "myStash Inc.",
       location: "Lagos, NG; Delaware, US",
       period: "2022 —— 2024",
-      description: "Led product development from the ground up and launch into three new markets: US, UK, CA. Built analytic dashboards and account review/screening tools"
+      description: "Led product development with focus on building scalable analytics infrastructure, dashboards, and automated screening pipelines across three markets"
     }
+  ];
+
+  const techStack = [
+    { category: "Languages", tools: "Python, Go, SQL" },
+    { category: "Infrastructure", tools: "Kubernetes, Docker, Terraform" },
+    { category: "ML/AI Tools", tools: "MLflow, DVC, LangChain" },
+    { category: "Cloud", tools: "AWS, GCP, Azure" },
+    { category: "Data", tools: "Feature Stores, Vector DBs, Airflow" },
   ];
 
   return (
@@ -61,15 +69,15 @@ const About = () => {
                 </h1>
                 
                 <p className="body-large">
-                  I'm <span className="font-bold text-primary">Deji</span>, a data analyst with a knack for turning numbers into actionable insights. With a background in management, I thrive on solving complex problems and helping businesses make data-driven decisions.
+                  I'm <span className="font-bold text-primary">Deji</span>, an LLMOps Engineer building the automated factories that train, deploy, and monitor AI models at scale. I bridge the gap between data science and production infrastructure.
                 </p>
                 
                 <p className="body-regular text-muted-foreground">
-                  When I'm not diving into data, you'll find me immersed in my other interests—exploring new destinations, getting lost in a new song, or rewatching episodes of my all-time fave anime.
+                  When I'm not managing GPU clusters or automating ML pipelines, you'll find me exploring new destinations, getting lost in a new song, or rewatching episodes of my all-time fave anime.
                 </p>
                 
                 <p className="body-regular text-muted-foreground">
-                  Each of these experiences fuels my creativity and curiosity, both in my work and life. Let's connect and explore the stories data can tell!
+                  Each of these experiences fuels my creativity and curiosity, both in my work and life. Let's connect and build something remarkable!
                 </p>
                 
                 <div className="pt-4">
@@ -114,6 +122,33 @@ const About = () => {
                   </div>
                   <p className="body-regular text-muted-foreground">
                     {job.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Tech Stack Section */}
+        <section className="section-padding section-spacing relative overflow-hidden">
+          <div className="absolute top-20 right-20 w-24 h-24 border-4 border-primary/10" />
+          
+          <div className="max-w-7xl mx-auto relative">
+            <div className="mb-16 md:mb-20">
+              <div className="accent-bar mb-6" />
+              <h2 className="heading-section">
+                Tech <span className="text-primary">Stack</span>
+              </h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+              {techStack.map((item, index) => (
+                <div key={index} className="space-y-3 group">
+                  <h3 className="font-display text-sm font-bold uppercase tracking-wider text-primary">
+                    {item.category}
+                  </h3>
+                  <p className="body-regular text-muted-foreground group-hover:text-foreground transition-colors">
+                    {item.tools}
                   </p>
                 </div>
               ))}
