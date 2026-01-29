@@ -13,7 +13,7 @@ const Hero = () => {
       
       <div className="section-padding pt-32 pb-12 md:pt-44 md:pb-20 flex-1 relative z-10">
         <div className="max-w-7xl mx-auto h-full">
-          <div className="max-w-3xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Text on left */}
             <div className="space-y-8">
               <div className="accent-bar" />
@@ -55,6 +55,33 @@ const Hero = () => {
               </div>
             </div>
             
+            {/* Geometric composition on right */}
+            <div className="hidden lg:block relative h-[500px]">
+              {/* Large square - back layer */}
+              <div className="absolute top-8 right-0 w-64 h-64 border-4 border-primary opacity-30" />
+              
+              {/* Medium square - mid layer, offset */}
+              <div className="absolute top-24 right-16 w-48 h-48 bg-primary opacity-10" />
+              
+              {/* Small square - front layer */}
+              <div className="absolute top-40 right-32 w-32 h-32 border-2 border-primary opacity-60" />
+              
+              {/* Horizontal lines */}
+              <div className="absolute top-16 right-72 w-24 h-[2px] bg-primary opacity-40" />
+              <div className="absolute top-20 right-80 w-16 h-[2px] bg-primary opacity-30" />
+              <div className="absolute top-24 right-72 w-20 h-[2px] bg-primary opacity-20" />
+              
+              {/* Vertical lines */}
+              <div className="absolute top-48 right-8 w-[2px] h-32 bg-primary opacity-40" />
+              <div className="absolute top-56 right-12 w-[2px] h-24 bg-primary opacity-25" />
+              
+              {/* Bottom accent squares */}
+              <div className="absolute bottom-16 right-24 w-20 h-20 border-2 border-primary opacity-40" />
+              <div className="absolute bottom-8 right-8 w-12 h-12 bg-primary opacity-20" />
+              
+              {/* Diagonal accent line */}
+              <div className="absolute top-32 right-48 w-40 h-[2px] bg-primary opacity-30 rotate-45 origin-left" />
+            </div>
           </div>
         </div>
       </div>
