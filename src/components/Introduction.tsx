@@ -15,14 +15,14 @@ const Introduction = () => {
               Hi, I'm <span className="text-primary">Deji</span>
             </h2>
             <p className="body-large text-muted-foreground">
-              A data analyst and strategist with a passion for uncovering insights 
-              that drive meaningful business decisions. I specialize in transforming 
-              complex datasets into clear, actionable strategies.
+              An ML Pipeline Architect and AI Infrastructure Specialist building 
+              the automated factories that train, deploy, and monitor machine 
+              learning models at scale.
             </p>
             <p className="body-base text-muted-foreground">
-              With expertise in data visualization, statistical analysis, and 
-              strategic thinking, I help organizations see beyond the numbers 
-              to understand the stories their data is telling.
+              I specialize in LLMOps—managing GPU clusters, automating model 
+              retraining pipelines, and building robust infrastructure for 
+              Large Language Models that power modern AI applications.
             </p>
             <a 
               href="/about"
