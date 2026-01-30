@@ -28,7 +28,7 @@ const Hero = () => {
                 <br />
                 AI <span className="text-primary">Work</span>
                 <br />
-                For You
+                For you
               </h1>
               
               {/* Subtitle */}
