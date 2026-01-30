@@ -29,7 +29,7 @@ const Footer = () => {
               <img src={logo} alt="Deji Joseph" className="h-10 w-auto" />
             </Link>
             <p className="body-regular text-muted-foreground max-w-xs">
-              Data analyst & strategist turning complex information into actionable insights.
+              LLMOps Engineer building AI infrastructure that delivers real business value.
             </p>
           </div>
 
