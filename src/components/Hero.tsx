@@ -23,8 +23,10 @@ const Hero = () => {
                 Analyst • Engineer • Strategist
               </p>
               
-              <h1 className="heading-hero">
-                Making AI <span className="text-primary">Work</span>
+              <h1 className="heading-hero relative z-20">
+                Making
+                <br />
+                AI <span className="text-primary">Work</span>
                 <br />
                 For You
               </h1>
@@ -79,8 +81,6 @@ const Hero = () => {
               <div className="absolute bottom-16 right-24 w-20 h-20 border-2 border-primary opacity-40" />
               <div className="absolute bottom-8 right-8 w-12 h-12 bg-primary opacity-20" />
               
-              {/* Diagonal accent line */}
-              <div className="absolute top-32 right-48 w-40 h-[2px] bg-primary opacity-30 rotate-45 origin-left" />
             </div>
           </div>
         </div>
