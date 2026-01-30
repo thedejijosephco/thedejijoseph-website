@@ -24,11 +24,9 @@ const Hero = () => {
               </p>
               
               <h1 className="heading-hero relative z-20">
-                Making
-                <br />
-                AI <span className="text-primary">Work</span>
-                <br />
-                For you
+                <span className="block">Making</span>
+                <span className="block">AI <span className="text-primary">Work</span></span>
+                <span className="block">For you</span>
               </h1>
               
               {/* Subtitle */}
