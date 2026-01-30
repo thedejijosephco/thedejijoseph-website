@@ -17,12 +17,6 @@ const Footer = () => {
 
   return (
     <footer className="section-padding section-spacing border-t border-border relative overflow-hidden">
-      {/* Large typographic background element */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-        <span className="text-[20rem] md:text-[28rem] lg:text-[36rem] font-display font-extrabold text-foreground/[0.03] leading-none tracking-tighter">
-          DEJI
-        </span>
-      </div>
       
       {/* Geometric accent */}
       <div className="absolute bottom-0 right-0 w-40 h-40 border-4 border-primary/10 translate-x-1/2 translate-y-1/2" />
@@ -94,7 +88,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-20 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2024 The Deji Joseph Co. All rights reserved.
+            © 2026 The Deji Joseph Co. All rights reserved.
           </p>
           <div className="accent-bar" />
         </div>
