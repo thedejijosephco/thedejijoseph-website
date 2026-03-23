@@ -95,7 +95,7 @@ const Notes = () => {
               </p>
 
               {/* Search Bar */}
-              <form onSubmit={handleSearch} className="flex gap-3 max-w-lg">
+              <form onSubmit={handleSearch} className="flex items-stretch gap-3 max-w-lg">
                 <div className="relative flex-1">
                   <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                   <input
@@ -103,7 +103,7 @@ const Notes = () => {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search notes..."
-                    className="w-full pl-11 pr-10 py-3 bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors font-body text-sm"
+                    className="w-full h-full pl-11 pr-10 bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors font-body text-sm"
                   />
                   {searchQuery && (
                     <button
