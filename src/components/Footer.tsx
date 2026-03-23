@@ -11,7 +11,7 @@ const Footer = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Blog", path: "/notes" },
+    { name: "Deji's Notes", path: "/notes" },
   ];
 
   return (
