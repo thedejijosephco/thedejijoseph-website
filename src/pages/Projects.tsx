@@ -1,8 +1,19 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowRight, ExternalLink, BarChart3, Database, TrendingUp } from "lucide-react";
 
 const Projects = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const hostname = window.location.hostname;
+    if (hostname === "thedejijoseph.com" || hostname === "www.thedejijoseph.com") {
+      navigate("/about", { replace: true });
+    }
+  }, [navigate]);
+
   const projects = [
     {
       title: "Sales Performance Dashboard",
