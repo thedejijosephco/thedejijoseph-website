@@ -11,8 +11,7 @@ const Footer = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    
-    { name: "Blog", url: "https://notes.thedejijoseph.com/" },
+    { name: "Blog", path: "/notes" },
   ];
 
   return (
@@ -40,25 +39,13 @@ const Footer = () => {
             </h4>
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                link.path ? (
-                  <Link 
-                    key={link.name}
-                    to={link.path} 
-                    className="nav-link w-fit"
-                  >
-                    {link.name}
-                  </Link>
-                ) : (
-                  <a 
-                    key={link.name}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="nav-link w-fit"
-                  >
-                    {link.name}
-                  </a>
-                )
+                <Link 
+                  key={link.name}
+                  to={link.path} 
+                  className="nav-link w-fit"
+                >
+                  {link.name}
+                </Link>
               ))}
             </nav>
           </div>
