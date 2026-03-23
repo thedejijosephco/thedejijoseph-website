@@ -31,6 +31,7 @@ export interface GhostTag {
   name: string;
   slug: string;
   description: string | null;
+  count?: { posts: number };
 }
 
 export interface GhostAuthor {
@@ -59,6 +60,10 @@ interface GhostPostResponse {
   posts: GhostPost[];
 }
 
+interface GhostTagsResponse {
+  tags: GhostTag[];
+}
+
 async function ghostFetch<T>(endpoint: string, params: Record<string, string> = {}): Promise<T> {
   const url = new URL(`${GHOST_API}${endpoint}`);
   url.searchParams.set('key', GHOST_KEY);
@@ -71,15 +76,38 @@ async function ghostFetch<T>(endpoint: string, params: Record<string, string> = 
   return res.json();
 }
 
-export async function getPosts(page = 1, limit = 12): Promise<{ posts: GhostPost[]; pagination: GhostPagination }> {
-  const data = await ghostFetch<GhostPostsResponse>('/posts/', {
+export async function getPosts(
+  page = 1,
+  limit = 12,
+  options?: { tag?: string; search?: string }
+): Promise<{ posts: GhostPost[]; pagination: GhostPagination }> {
+  const params: Record<string, string> = {
     include: 'tags,authors',
     fields: 'id,uuid,title,slug,excerpt,custom_excerpt,feature_image,feature_image_alt,published_at,updated_at,reading_time,meta_title,meta_description',
     limit: String(limit),
     page: String(page),
     order: 'published_at desc',
-  });
-  return { posts: data.posts, pagination: data.meta.pagination };
+  };
+
+  if (options?.tag) {
+    params.filter = `tag:${options.tag}`;
+  }
+
+  const data = await ghostFetch<GhostPostsResponse>('/posts/', params);
+  
+  // Client-side search filtering (Ghost Content API doesn't have a search endpoint)
+  let posts = data.posts;
+  if (options?.search) {
+    const q = options.search.toLowerCase();
+    posts = posts.filter(
+      (p) =>
+        p.title.toLowerCase().includes(q) ||
+        (p.excerpt && p.excerpt.toLowerCase().includes(q)) ||
+        (p.custom_excerpt && p.custom_excerpt.toLowerCase().includes(q))
+    );
+  }
+
+  return { posts, pagination: data.meta.pagination };
 }
 
 export async function getPostBySlug(slug: string): Promise<GhostPost> {
@@ -92,14 +120,15 @@ export async function getPostBySlug(slug: string): Promise<GhostPost> {
   return data.posts[0];
 }
 
-export async function getPostsByTag(tagSlug: string, page = 1, limit = 12): Promise<{ posts: GhostPost[]; pagination: GhostPagination }> {
-  const data = await ghostFetch<GhostPostsResponse>('/posts/', {
-    include: 'tags,authors',
-    fields: 'id,uuid,title,slug,excerpt,custom_excerpt,feature_image,feature_image_alt,published_at,updated_at,reading_time,meta_title,meta_description',
-    filter: `tag:${tagSlug}`,
-    limit: String(limit),
-    page: String(page),
-    order: 'published_at desc',
+export async function getTags(): Promise<GhostTag[]> {
+  const data = await ghostFetch<GhostTagsResponse>('/tags/', {
+    include: 'count.posts',
+    order: 'count.posts desc',
+    limit: 'all',
   });
-  return { posts: data.posts, pagination: data.meta.pagination };
+  return data.tags.filter((t) => !t.name.startsWith('#'));
+}
+
+export async function getPostsByTag(tagSlug: string, page = 1, limit = 12): Promise<{ posts: GhostPost[]; pagination: GhostPagination }> {
+  return getPosts(page, limit, { tag: tagSlug });
 }
