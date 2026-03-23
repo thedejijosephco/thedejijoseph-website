@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CallToAction from "@/components/CallToAction";
 import { ArrowRight, ExternalLink, BarChart3, Database, TrendingUp } from "lucide-react";
 
 const Projects = () => {
@@ -128,28 +129,7 @@ const Projects = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="section-padding section-spacing bg-secondary text-secondary-foreground relative overflow-hidden">
-          <div className="absolute top-10 left-10 w-20 h-20 border-2 border-primary/30" />
-          <div className="absolute bottom-10 right-10 w-12 h-12 bg-primary/20" />
-          
-          <div className="max-w-4xl mx-auto text-center relative z-10">
-            <div className="accent-bar mx-auto mb-8" />
-            <h2 className="heading-section mb-6">
-              Have a <span className="text-primary">Project</span> in Mind?
-            </h2>
-            <p className="body-large mb-10 text-secondary-foreground/80">
-              Let's collaborate and turn your data challenges into opportunities for growth.
-            </p>
-            <a 
-              href="mailto:hello@thedejijoseph.com?subject=Project Inquiry"
-              className="btn-primary bg-primary text-primary-foreground hover:bg-primary/90"
-            >
-              Let's Discuss
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </section>
+        <CallToAction />
       </main>
 
       <Footer />
