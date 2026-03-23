@@ -15,14 +15,9 @@ const Header = () => {
           <Link to="/about" className="nav-link">
             About
           </Link>
-          <a 
-            href="https://notes.thedejijoseph.com/" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-link"
-          >
+          <Link to="/notes" className="nav-link">
             Blog
-          </a>
+          </Link>
           <a 
             href="mailto:hello@thedejijoseph.com?subject=Partnership" 
             className="btn-primary hidden md:inline-flex"
