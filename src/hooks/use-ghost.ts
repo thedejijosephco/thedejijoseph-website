@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import { getPosts, getPostBySlug, getPostsByTag } from '@/lib/ghost';
+import { getPosts, getPostBySlug, getTags } from '@/lib/ghost';
 
-export function usePosts(page = 1, limit = 12) {
+export function usePosts(page = 1, limit = 12, options?: { tag?: string; search?: string }) {
   return useQuery({
-    queryKey: ['ghost-posts', page, limit],
-    queryFn: () => getPosts(page, limit),
+    queryKey: ['ghost-posts', page, limit, options?.tag, options?.search],
+    queryFn: () => getPosts(page, limit, options),
     staleTime: 5 * 60 * 1000,
   });
 }
@@ -18,11 +18,10 @@ export function usePost(slug: string) {
   });
 }
 
-export function usePostsByTag(tagSlug: string, page = 1, limit = 12) {
+export function useTags() {
   return useQuery({
-    queryKey: ['ghost-posts-tag', tagSlug, page, limit],
-    queryFn: () => getPostsByTag(tagSlug, page, limit),
-    staleTime: 5 * 60 * 1000,
-    enabled: !!tagSlug,
+    queryKey: ['ghost-tags'],
+    queryFn: getTags,
+    staleTime: 10 * 60 * 1000,
   });
 }
