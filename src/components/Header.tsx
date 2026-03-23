@@ -16,7 +16,7 @@ const Header = () => {
             About
           </Link>
           <Link to="/notes" className="nav-link">
-            Blog
+            Notes
           </Link>
           <a 
             href="mailto:hello@thedejijoseph.com?subject=Partnership" 
