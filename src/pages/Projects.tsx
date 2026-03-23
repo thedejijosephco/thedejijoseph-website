@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CallToAction from "@/components/CallToAction";
 import { ArrowRight, ExternalLink, BarChart3, Database, TrendingUp } from "lucide-react";
 
 const Projects = () => {
