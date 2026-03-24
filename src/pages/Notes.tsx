@@ -14,7 +14,7 @@ const Notes = () => {
   const [activeSearch, setActiveSearch] = useState('');
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
-  const { data, isLoading, error } = usePosts(page, 50, {
+  const { data, isLoading, error } = usePosts(page, 18, {
     tag: activeTag || undefined,
     search: activeSearch || undefined,
   });
