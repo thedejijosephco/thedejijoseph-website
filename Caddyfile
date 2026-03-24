@@ -3,7 +3,7 @@
     file_server
 
     # Proxy API requests to the Hono backend
-    handle_path /api/* {
+    handle /api/* {
         reverse_proxy localhost:3000
     }
 
