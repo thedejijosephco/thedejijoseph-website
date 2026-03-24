@@ -99,6 +99,12 @@ const NotePost = () => {
                   {post.title}
                 </h1>
 
+                {(post.custom_excerpt || post.excerpt) && (
+                  <p className="body-large text-muted-foreground">
+                    {post.custom_excerpt || post.excerpt}
+                  </p>
+                )}
+
                 <div className="flex items-center gap-4 text-sm text-muted-foreground">
                   {post.primary_author && (
                     <span className="font-medium text-foreground">
