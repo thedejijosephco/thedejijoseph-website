@@ -204,3 +204,12 @@
     border-image: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent))) 1;
   }
 }
+
+/* Ghost post content paragraph spacing */
+.prose p {
+  margin-bottom: 1.5em !important;
+}
+
+.prose p:last-child {
+  margin-bottom: 0 !important;
+}
