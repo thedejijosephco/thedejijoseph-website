@@ -51,7 +51,7 @@ const Notes = () => {
 
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/ghost-subscribe`,
+        `${import.meta.env.VITE_API_BASE_URL}/ghost/subscribe`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
