@@ -146,6 +146,7 @@ const NotePost = () => {
             <div
               className="max-w-3xl mx-auto prose prose-lg prose-neutral dark:prose-invert
                 prose-headings:font-display prose-headings:tracking-tight
+                prose-p:mb-6 prose-p:leading-relaxed
                 prose-a:text-primary prose-a:no-underline hover:prose-a:underline
                 prose-img:my-8
                 prose-blockquote:border-primary prose-blockquote:border-l-4
