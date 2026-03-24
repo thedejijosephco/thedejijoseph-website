@@ -1,0 +1,14 @@
+:80 {
+    root * /usr/share/caddy
+    file_server
+
+    # Proxy API requests to the Hono backend
+    handle_path /api/* {
+        reverse_proxy localhost:3000
+    }
+
+    # Fallback for SPA routing
+    handle {
+        try_files {path} /index.html
+    }
+}
