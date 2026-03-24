@@ -2,6 +2,8 @@ import { Hono } from 'hono'
 
 const ghost = new Hono()
 
+ghost.get('/', (c) => c.text('Ghost API is up!'))
+
 ghost.post('/subscribe', async (c) => {
   try {
     const { email } = await c.req.json()
